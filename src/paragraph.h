@@ -34,7 +34,7 @@ class Paragraph : public Article {
         }
 
         void add(Article* content) override {
-            if (content->getLevel() != 0 && content->getLevel() <= _level) {
+            if (content->getLevel() != 0 && content->getLevel() < _level) {
                 throw "error on add" + std::to_string(content->getLevel()) +
                       "greater then" + std::to_string(_level);
             }
